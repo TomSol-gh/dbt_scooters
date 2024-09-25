@@ -35,6 +35,4 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   dbt_scooters:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+    +materialized: table
