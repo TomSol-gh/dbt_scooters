@@ -9,6 +9,8 @@ sources:
         description: "Scooter trips"
       - name: "users"
         description: "Users of scooter service"
+      - name: "events"
+        description: "User events"
 
 models:
   - name: "trips_prep"
@@ -36,6 +38,10 @@ models:
     description: "10 meters precision hexagons for finishing points"
   - name: "trips_users"
     description: "Trips data with users info"
+    config:
+      materialized: incremental
+  - name: "events_clean"
+    description: "Distinct user events"
     config:
       materialized: incremental
 
