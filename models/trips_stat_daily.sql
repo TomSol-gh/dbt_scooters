@@ -1,7 +1,9 @@
 select 
-	date(started_at) as date,
+	date,
 	count(id) as trips,
-	max(price) as max_price_rub,
-	avg(distance) / 1000 as avg_distance_km
-from scooters_raw.trips t 
-group by date(started_at)
+	max(price_rub) as max_price_rub,
+    avg(price_rub) / avg(duration_s) * 60 as avg_price_rub_per_min,
+	avg(distance_m) / 1000 as avg_distance_km
+from {{ref("trips_prep")}}
+group by date
+order by date 
