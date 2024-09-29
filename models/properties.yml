@@ -34,6 +34,10 @@ models:
     description: "500 meters precision hexagons for starting points"
   - name: "parking_finish_stat"
     description: "10 meters precision hexagons for finishing points"
+  - name: "trips_users"
+    description: "Trips data with users info"
+    config:
+      materialized: incremental
 
 
 
