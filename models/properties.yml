@@ -44,6 +44,13 @@ models:
     description: "Distinct user events"
     config:
       materialized: incremental
+  - name: "revenue_daily"
+    description: "Daily revenue data"
+    config: 
+      materialized: incremental
+      strategy: merge
+      unique_key: ["date"]
+      on_schema_change: append_new_columns
 
 
 
