@@ -13,3 +13,7 @@ seeds:
     description: "User age groups"
     config:
       delimiter: ","
+  - name: "users_sex"
+    description: "User names with sex indicated"
+    config:
+      delimiter: ","
