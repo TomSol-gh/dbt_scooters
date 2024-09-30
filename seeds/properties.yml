@@ -9,3 +9,7 @@ seeds:
     description: "User events in mobile app"
     config:
       delimiter: ","
+  - name: "age_groups"
+    description: "User age groups"
+    config:
+      delimiter: ","

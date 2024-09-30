@@ -65,6 +65,8 @@ models:
       materialized: view
   - name: "events_stat"
     description: "Cancel requests statistics"
+  - name: "trips_age_group"
+    description: "Statistics by user groups"
     
 
 
