@@ -59,6 +59,13 @@ models:
     description: "Aggregated info about scooters"
   - name: "companies_trips"
     description: "Statistic by manufacture companies"
+  - name: "events_full"
+    description: "Distinct user events with meaningful types"
+    config:
+      materialized: view
+  - name: "events_stat"
+    description: "Cancel requests statistics"
+    
 
 
 
