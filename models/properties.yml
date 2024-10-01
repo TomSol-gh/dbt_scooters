@@ -50,14 +50,6 @@ models:
       materialized: incremental
       strategy: merge
       unique_key: ["user_id", "timestamp", "type_id"]
-  - name: "revenue_daily"
-    description: "Daily revenue data"
-    config: 
-      materialized: incremental
-      strategy: merge
-      unique_key: ["date"]
-      on_schema_change: append_new_columns
-      full_refresh: false
   - name: "trip_concurrency"
     description: "Concurrent trips"
     config:

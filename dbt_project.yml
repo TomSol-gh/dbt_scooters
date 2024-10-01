@@ -22,6 +22,8 @@ target-path: "target" # directory which will store compiled SQL files
 clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
+on-run-end:
+  - "grant usage on schema dbt_finance to finance;"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -37,3 +39,7 @@ models:
   dbt_scooters:
     +materialized: table
     +on_schema_change: append_new_columns
+    finance:
+      +schema: "finance"
+      +grants:
+        select: [ "finance" ]

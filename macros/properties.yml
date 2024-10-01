@@ -23,3 +23,10 @@ macros:
       - name: "grid"
         type: "integer"
         description: "Hex size"
+  
+  - name: "create_role"
+    description: "Creates role in db"
+    arguments:
+      - name: "name"
+        type: "string"
+        description: "Role name"
