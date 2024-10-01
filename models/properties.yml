@@ -44,6 +44,8 @@ models:
     description: "Distinct user events"
     config:
       materialized: incremental
+      strategy: merge
+      unique_key: ["user_id", "timestamp", "type_id"]
   - name: "revenue_daily"
     description: "Daily revenue data"
     config: 
