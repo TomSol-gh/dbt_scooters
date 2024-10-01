@@ -41,7 +41,8 @@ cumsum_cte as (
 )
 select
     "timestamp",
-    concurrency
+    concurrency,
+    {{ updated_at() }}
 from
     cumsum_cte
 where output_data

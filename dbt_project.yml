@@ -36,3 +36,4 @@ clean-targets: # directories to be removed by `dbt clean`
 models:
   dbt_scooters:
     +materialized: table
+    +on_schema_change: append_new_columns
