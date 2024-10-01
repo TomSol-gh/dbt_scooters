@@ -40,6 +40,10 @@ models:
     description: "Trips data with users info"
     config:
       materialized: incremental
+      post-hook: 
+        - "analyze dbt.trips_users"
+        - sql: "vacuum dbt.trips_users"
+          transaction: false
   - name: "events_clean"
     description: "Distinct user events"
     config:
