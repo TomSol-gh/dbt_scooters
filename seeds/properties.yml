@@ -9,10 +9,27 @@ seeds:
     description: "User events in mobile app"
     config:
       delimiter: ","
+    columns:
+      - name: "type_id"
+        description: "Event type id"
+        tests: ["unique_not_null"]
+      - name: "type"
+        description: "Event type presentation"
+        tests: ["unique_not_null"]
   - name: "age_groups"
     description: "User age groups"
     config:
       delimiter: ","
+    columns:
+      - name: "group"
+        description: "Age group definition"
+        tests: ["unique_not_null"]
+      - name: "age_start"
+        description: "Minimum age within a group"
+        tests: ["unique_not_null"]
+      - name: "age_end"
+        description: "Maximum age within a group"
+        tests: ["unique_not_null"]
   - name: "users_sex"
     description: "User names with sex indicated"
     config:
