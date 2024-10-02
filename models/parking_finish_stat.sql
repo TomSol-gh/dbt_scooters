@@ -1,1 +1,1 @@
-{{ trips_geom_stat(ref("trips_prep"), geom_col='finish_point', grid=10) }}
+{{ trips_geom_stat(ref("trips_geom"), geom_col='finish_point', grid=10) }}
