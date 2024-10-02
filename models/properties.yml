@@ -47,6 +47,9 @@ models:
         - columns: ['date']
   - name: "trips_age_daily"
     description: "Data prepered for daily statistics by age groups"
+    tests:
+      - unique:
+          column_name: "(date::text || age::text)"
   - name: "trips_age_daily_stat"
     description: "Daily trips and revenue statistics by age groups"
   - name: "trips_geom"
@@ -79,6 +82,12 @@ models:
     description: "Aggregated info about scooters"
   - name: "companies_trips"
     description: "Statistic by manufacture companies"
+    columns:
+      - name: "company"
+        description: "Company name"
+        tests:
+          - unique
+          
   - name: "events_full"
     description: "Distinct user events with meaningful types"
     config:
