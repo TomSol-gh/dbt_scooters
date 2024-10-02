@@ -5,6 +5,21 @@ seeds:
     description: "Scooter models info and statistics"
     config:
       delimiter: ","
+    columns:
+      - name: "company"
+        description: "Company name"
+        tests:
+          - not_null
+      - name: "model"
+        description: "Scooter model"
+        tests: ["unique_not_null"]
+      - name: "hardware_id"
+        description: "Scooter hardware id"
+        tests: ["unique_not_null"]
+      - name: "scooters"
+        description: "Company name"
+        tests:
+          - not_null
   - name: "event_types"
     description: "User events in mobile app"
     config:
@@ -34,3 +49,12 @@ seeds:
     description: "User names with sex indicated"
     config:
       delimiter: ","
+    columns:
+      - name: "first_name"
+        description: "User first name"
+        tests:
+          - not_null
+      - name: "sex"
+        description: "User gender"
+        tests:
+          - not_null
