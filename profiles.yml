@@ -2,7 +2,7 @@ default:
   target: dev
   outputs:
     dev:
-      type: postrges
+      type: postgres
       host: dpg-crlvuh08fa8c739uukcg-a.frankfurt-postgres.render.com
       port: 5432
       user: admin
