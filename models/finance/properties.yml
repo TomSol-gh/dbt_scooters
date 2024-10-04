@@ -9,3 +9,25 @@ models:
       unique_key: ["date"]
       on_schema_change: append_new_columns
       full_refresh: false
+      contract:
+        enforced: true
+    columns:
+      - name: "date"
+        description: "Calculation date"
+        data_type: "date"
+      - name: "revenue_rub"
+        description: "Daily revenue in rub"
+        data_type: "decimal(20, 2)"
+      - name: "updated_at"
+        description: "Table last update date time"
+        data_type: "timestamptz"
+    exposures:
+      - name: "financial_dashboard"
+        label: "Financial Dashboard"
+        type: "dashboard"
+        maturity: "high"
+        description: "Main financial dashboard on company with code financial metrics"
+        owner:
+          name: "Financial department"
+        depends_on:
+          - "ref('revenue_daily')"
