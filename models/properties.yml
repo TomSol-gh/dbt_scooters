@@ -154,7 +154,7 @@ models:
       strategy: "merge"
       unique_key: [ "user_id", "timestamp", "type_id" ]
       meta:
-        owner: "Igor Dushnin
+        owner: "Igor Dushnin"
         incrementality:
           start_date: "2023-06-01"
           days_max: 60
