@@ -2,7 +2,11 @@ version: 2
 
 seeds:
   - name: "models"
-    description: "Scooter models info and statistics"
+    description: > 
+      Scooter models information and park statisctics by model.
+      Includes information about the manufacturing company. 
+      Data received from the service team and uploaded by Mark.
+      Data is current as of summer 2023.
     config:
       delimiter: ","
     columns:
@@ -20,17 +24,23 @@ seeds:
         description: "Company name"
         tests:
           - not_null
+
   - name: "event_types"
-    description: "User events in mobile app"
+    description: "{{ doc('event_types') }}"
     config:
       delimiter: ","
     columns:
       - name: "type_id"
-        description: "Event type id"
+        description: >
+          An integer representing the unique identifier for each event type.
+          This ID is used in the user events table to refer to specific event types.
         tests: ["unique_not_null"]
       - name: "type"
-        description: "Event type presentation"
+        description: >
+          A string providing the textual name of the event type.
+          This name describes the nature of the event and is used for reporting and analysis purposes.
         tests: ["unique_not_null"]
+
   - name: "age_groups"
     description: "User age groups"
     config:
@@ -45,6 +55,7 @@ seeds:
       - name: "age_end"
         description: "Maximum age within a group"
         tests: ["unique_not_null"]
+
   - name: "users_sex"
     description: "User names with sex indicated"
     config:

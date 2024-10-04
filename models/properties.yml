@@ -50,15 +50,7 @@ sources:
                   name: "every_trip_has_user"
                   field: "id"
                   to: "source('scooters_raw', 'users')"
-          - name: "type_id"
-            description: "Event type id"
-            tests:
-              - not null
-              - relationships:
-                  name: "every_event_has_type_id"
-                  field: "type_id"
-                  to: ref('event_types')
-        
+
 models:
   - name: "trips_prep"
     description: "Updated scooter trips info"
