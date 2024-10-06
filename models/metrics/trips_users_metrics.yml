@@ -46,12 +46,7 @@ semantic_models:
         agg: "median"
         expr: "duration_s / 60.0"
         create_metric: True
-      - name: "scooters_count"
-        description: "Distinct count of scooters used for trips"
-        agg: "count_distinct"
-        expr: "scooter_hw_id"
-        create_metric: True
-
+        
     dimensions:
       - name: "sex"
         type: "categorical"
