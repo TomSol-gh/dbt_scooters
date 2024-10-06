@@ -21,6 +21,7 @@ jobs:
         run: |
           pip install dbt-core dbt-postgres
           dbt deps
+          cp profiles.example.yml profiles.yml
       
       - name: Generate docs
         run: dbt docs generate
